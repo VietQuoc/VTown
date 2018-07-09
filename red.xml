@@ -4,6 +4,7 @@
     <relativeTo>WORKSPACE</relativeTo>
     <referencedLibrary type="PYTHON" name="Selenium2Library" path="C:/Program Files (x86)/Python37-32/Lib/site-packages"/>
     <referencedLibrary type="PYTHON" name="CSV" path="ProjectVtown/Scripts"/>
+    <referencedLibrary type="PYTHON" name="MyUtil" path="E:/Working/ProjectVtown/Scripts"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>

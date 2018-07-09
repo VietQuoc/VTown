@@ -4,6 +4,7 @@ Library         Collections
 Library         CSV.py
 *** Test Cases ***
 Get Source
+    [Teardown]    Close All Browsers
     Open Browser    http://vtown.vn/    chrome
     ${COMPANY_LABEL}=    Set Variable    //ul[contains(@id,'group')]//li//a
     ${NUMBER_COMPANY}=    Get Matching Xpath Count    ${COMPANY_LABEL}
@@ -17,7 +18,7 @@ Get Source
     
     Log    List Company Name: 
     Log    ${LIST_COMPANY_NAME}
-    Create And Write File    ${CURDIR}\\Data\\list_company_name.csv    @{LIST_COMPANY_NAME}
+    Create And Write File Txt    ${CURDIR}\\Data\\list_company_name.txt    @{LIST_COMPANY_NAME}
     Log    List Company Link:
     Log    ${LIST_COMPANY_LINK}
-    Create And Write File    ${CURDIR}\\Data\\list_company_link.csv    @{LIST_COMPANY_LINK}
+    Create And Write File Txt    ${CURDIR}\\Data\\list_company_link.txt    @{LIST_COMPANY_LINK}
