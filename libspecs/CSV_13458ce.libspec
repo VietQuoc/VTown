@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec name="CSV" type="library" format="ROBOT" generated="20180709 14:29:02">
+<keywordspec name="CSV" type="library" format="ROBOT" generated="20180709 16:50:46">
 <version></version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
@@ -11,6 +11,14 @@
 </arguments>
 <doc>Create new csv file with first data in A1 cell!
 Input path of filename. ex test_data/compliance/exp_filter_v2/filename.csv</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Read Data File">
+<arguments>
+<arg>name</arg>
+</arguments>
+<doc></doc>
 <tags>
 </tags>
 </kw>

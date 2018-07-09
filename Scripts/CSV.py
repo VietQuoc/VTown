@@ -9,3 +9,9 @@ def create_and_write_file(filename, *line):
         writer = csv.writer(csvfile)
         for i in line:
             writer.writerow([i])
+
+def read_data_file(name):
+    with open(name, 'r') as f:
+        reader = csv.reader(f)
+        your_list = list(reader)
+    return your_list
