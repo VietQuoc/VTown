@@ -1,0 +1,2107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20180709 14:46:08.376">
+<suite id="s1" name="ProjectVtown" source="D:\Eclipse\WorkSpace\ProjectVtown">
+<suite id="s1-s1" name="Scripts" source="D:\Eclipse\WorkSpace\ProjectVtown\Scripts">
+<suite id="s1-s1-s1" name="Get Resoures" source="D:\Eclipse\WorkSpace\ProjectVtown\Scripts\Get_Resoures.robot">
+<test id="s1-s1-s1-t1" name="Get Source">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://vtown.vn/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180709 14:46:08.595" level="INFO">Opening browser 'chrome' to base url 'http://vtown.vn/'.</msg>
+<status status="PASS" starttime="20180709 14:46:08.594" endtime="20180709 14:46:22.297"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>//ul[contains(@id,'group')]//li//a</arg>
+</arguments>
+<assign>
+<var>${COMPANY_LABEL}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.298" level="INFO">${COMPANY_LABEL} = //ul[contains(@id,'group')]//li//a</msg>
+<status status="PASS" starttime="20180709 14:46:22.297" endtime="20180709 14:46:22.298"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Deprecated. Use `Get Element Count` instead.</doc>
+<arguments>
+<arg>${COMPANY_LABEL}</arg>
+</arguments>
+<assign>
+<var>${NUMBER_COMPANY}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.316" level="INFO">${NUMBER_COMPANY} = 46</msg>
+<status status="PASS" starttime="20180709 14:46:22.299" endtime="20180709 14:46:22.316"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>${LIST_COMPANY_NAME}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.317" level="INFO">${LIST_COMPANY_NAME} = []</msg>
+<status status="PASS" starttime="20180709 14:46:22.316" endtime="20180709 14:46:22.317"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>${LIST_COMPANY_LINK}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.317" level="INFO">${LIST_COMPANY_LINK} = []</msg>
+<status status="PASS" starttime="20180709 14:46:22.317" endtime="20180709 14:46:22.317"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | ${number_company}+1 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.335" level="INFO">${company_name} = Hồ Chí Minh</msg>
+<status status="PASS" starttime="20180709 14:46:22.318" endtime="20180709 14:46:22.335"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.350" level="INFO">${company_link} = http://vtown.vn/area/hcm.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.336" endtime="20180709 14:46:22.350"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.351" endtime="20180709 14:46:22.351"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.351" endtime="20180709 14:46:22.352"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.318" endtime="20180709 14:46:22.352"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.369" level="INFO">${company_name} = Hà Nội</msg>
+<status status="PASS" starttime="20180709 14:46:22.352" endtime="20180709 14:46:22.369"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.389" level="INFO">${company_link} = http://vtown.vn/area/ha-noi.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.369" endtime="20180709 14:46:22.389"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.389" endtime="20180709 14:46:22.390"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.390" endtime="20180709 14:46:22.390"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.352" endtime="20180709 14:46:22.390"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.405" level="INFO">${company_name} = Bình Dương</msg>
+<status status="PASS" starttime="20180709 14:46:22.391" endtime="20180709 14:46:22.406"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.417" level="INFO">${company_link} = http://vtown.vn/area/binh-duong.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.406" endtime="20180709 14:46:22.417"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.417" endtime="20180709 14:46:22.418"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.418" endtime="20180709 14:46:22.418"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.390" endtime="20180709 14:46:22.418"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.438" level="INFO">${company_name} = Đồng Nai</msg>
+<status status="PASS" starttime="20180709 14:46:22.419" endtime="20180709 14:46:22.439"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.451" level="INFO">${company_link} = http://vtown.vn/area/dong-nai.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.439" endtime="20180709 14:46:22.452"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.452" endtime="20180709 14:46:22.452"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.452" endtime="20180709 14:46:22.453"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.419" endtime="20180709 14:46:22.453"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.471" level="INFO">${company_name} = Hải Phòng</msg>
+<status status="PASS" starttime="20180709 14:46:22.453" endtime="20180709 14:46:22.471"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.491" level="INFO">${company_link} = http://vtown.vn/area/hai-phong.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.472" endtime="20180709 14:46:22.491"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.491" endtime="20180709 14:46:22.492"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.492" endtime="20180709 14:46:22.493"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.453" endtime="20180709 14:46:22.493"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.513" level="INFO">${company_name} = Bắc Ninh</msg>
+<status status="PASS" starttime="20180709 14:46:22.494" endtime="20180709 14:46:22.513"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.523" level="INFO">${company_link} = http://vtown.vn/area/bac-ninh.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.513" endtime="20180709 14:46:22.523"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.523" endtime="20180709 14:46:22.524"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.524" endtime="20180709 14:46:22.524"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.493" endtime="20180709 14:46:22.525"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.547" level="INFO">${company_name} = Đà Nẵng</msg>
+<status status="PASS" starttime="20180709 14:46:22.525" endtime="20180709 14:46:22.547"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.558" level="INFO">${company_link} = http://vtown.vn/area/da-nang.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.547" endtime="20180709 14:46:22.559"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.559" endtime="20180709 14:46:22.560"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.560" endtime="20180709 14:46:22.560"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.525" endtime="20180709 14:46:22.561"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.588" level="INFO">${company_name} = Hưng Yên</msg>
+<status status="PASS" starttime="20180709 14:46:22.561" endtime="20180709 14:46:22.588"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.602" level="INFO">${company_link} = http://vtown.vn/area/hung-yen.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.588" endtime="20180709 14:46:22.602"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.602" endtime="20180709 14:46:22.603"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.603" endtime="20180709 14:46:22.603"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.561" endtime="20180709 14:46:22.603"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.620" level="INFO">${company_name} = Hải Dương</msg>
+<status status="PASS" starttime="20180709 14:46:22.604" endtime="20180709 14:46:22.621"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.637" level="INFO">${company_link} = http://vtown.vn/area/hai-duong.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.621" endtime="20180709 14:46:22.637"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.637" endtime="20180709 14:46:22.638"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.638" endtime="20180709 14:46:22.638"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.603" endtime="20180709 14:46:22.638"></status>
+</kw>
+<kw name="${i} = 10" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.656" level="INFO">${company_name} = Vĩnh Phúc</msg>
+<status status="PASS" starttime="20180709 14:46:22.639" endtime="20180709 14:46:22.656"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.669" level="INFO">${company_link} = http://vtown.vn/area/vinh-phuc.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.656" endtime="20180709 14:46:22.669"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.669" endtime="20180709 14:46:22.669"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.670" endtime="20180709 14:46:22.670"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.639" endtime="20180709 14:46:22.670"></status>
+</kw>
+<kw name="${i} = 11" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.692" level="INFO">${company_name} = Long An</msg>
+<status status="PASS" starttime="20180709 14:46:22.670" endtime="20180709 14:46:22.693"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.706" level="INFO">${company_link} = http://vtown.vn/area/long-an.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.693" endtime="20180709 14:46:22.706"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.706" endtime="20180709 14:46:22.706"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.707" endtime="20180709 14:46:22.707"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.670" endtime="20180709 14:46:22.707"></status>
+</kw>
+<kw name="${i} = 12" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.723" level="INFO">${company_name} = Bà Rịa - Vũng Tàu</msg>
+<status status="PASS" starttime="20180709 14:46:22.707" endtime="20180709 14:46:22.724"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.737" level="INFO">${company_link} = http://vtown.vn/area/ba-ria--vung-tau.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.724" endtime="20180709 14:46:22.737"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.737" endtime="20180709 14:46:22.738"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.738" endtime="20180709 14:46:22.738"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.707" endtime="20180709 14:46:22.738"></status>
+</kw>
+<kw name="${i} = 13" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.758" level="INFO">${company_name} = Thanh Hóa</msg>
+<status status="PASS" starttime="20180709 14:46:22.740" endtime="20180709 14:46:22.758"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.775" level="INFO">${company_link} = http://vtown.vn/area/thanh-hoa.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.758" endtime="20180709 14:46:22.775"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.776" endtime="20180709 14:46:22.776"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.777" endtime="20180709 14:46:22.777"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.740" endtime="20180709 14:46:22.777"></status>
+</kw>
+<kw name="${i} = 14" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.801" level="INFO">${company_name} = Khánh Hòa</msg>
+<status status="PASS" starttime="20180709 14:46:22.778" endtime="20180709 14:46:22.801"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.813" level="INFO">${company_link} = http://vtown.vn/area/khanh-hoa.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.801" endtime="20180709 14:46:22.813"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.814" endtime="20180709 14:46:22.814"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.814" endtime="20180709 14:46:22.815"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.778" endtime="20180709 14:46:22.815"></status>
+</kw>
+<kw name="${i} = 15" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.831" level="INFO">${company_name} = Cần Thơ</msg>
+<status status="PASS" starttime="20180709 14:46:22.815" endtime="20180709 14:46:22.831"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.842" level="INFO">${company_link} = http://vtown.vn/area/can-tho.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.832" endtime="20180709 14:46:22.842"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.843" endtime="20180709 14:46:22.843"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.843" endtime="20180709 14:46:22.844"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.815" endtime="20180709 14:46:22.844"></status>
+</kw>
+<kw name="${i} = 16" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.862" level="INFO">${company_name} = Quảng Nam</msg>
+<status status="PASS" starttime="20180709 14:46:22.844" endtime="20180709 14:46:22.863"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.873" level="INFO">${company_link} = http://vtown.vn/area/quang-nam.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.863" endtime="20180709 14:46:22.873"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.873" endtime="20180709 14:46:22.874"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.874" endtime="20180709 14:46:22.874"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.844" endtime="20180709 14:46:22.875"></status>
+</kw>
+<kw name="${i} = 17" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.910" level="INFO">${company_name} = Lâm Đồng</msg>
+<status status="PASS" starttime="20180709 14:46:22.875" endtime="20180709 14:46:22.910"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.920" level="INFO">${company_link} = http://vtown.vn/area/lam-dong.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.910" endtime="20180709 14:46:22.920"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.921" endtime="20180709 14:46:22.921"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.921" endtime="20180709 14:46:22.922"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.875" endtime="20180709 14:46:22.922"></status>
+</kw>
+<kw name="${i} = 18" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.938" level="INFO">${company_name} = Hà Nam</msg>
+<status status="PASS" starttime="20180709 14:46:22.922" endtime="20180709 14:46:22.939"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.951" level="INFO">${company_link} = http://vtown.vn/area/ha-nam.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.939" endtime="20180709 14:46:22.951"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.952" endtime="20180709 14:46:22.952"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.952" endtime="20180709 14:46:22.953"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.922" endtime="20180709 14:46:22.953"></status>
+</kw>
+<kw name="${i} = 19" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.969" level="INFO">${company_name} = Nghệ An</msg>
+<status status="PASS" starttime="20180709 14:46:22.953" endtime="20180709 14:46:22.969"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.979" level="INFO">${company_link} = http://vtown.vn/area/nghe-an.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.969" endtime="20180709 14:46:22.979"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.979" endtime="20180709 14:46:22.980"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:22.980" endtime="20180709 14:46:22.980"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.953" endtime="20180709 14:46:22.980"></status>
+</kw>
+<kw name="${i} = 20" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:22.997" level="INFO">${company_name} = Bình Định</msg>
+<status status="PASS" starttime="20180709 14:46:22.981" endtime="20180709 14:46:22.997"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.018" level="INFO">${company_link} = http://vtown.vn/area/binh-dinh.html</msg>
+<status status="PASS" starttime="20180709 14:46:22.997" endtime="20180709 14:46:23.018"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.018" endtime="20180709 14:46:23.019"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.019" endtime="20180709 14:46:23.020"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.981" endtime="20180709 14:46:23.020"></status>
+</kw>
+<kw name="${i} = 21" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.043" level="INFO">${company_name} = Thừa Thiên Huế</msg>
+<status status="PASS" starttime="20180709 14:46:23.021" endtime="20180709 14:46:23.043"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.056" level="INFO">${company_link} = http://vtown.vn/area/thua-thien-hue.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.043" endtime="20180709 14:46:23.056"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.056" endtime="20180709 14:46:23.057"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.057" endtime="20180709 14:46:23.058"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.020" endtime="20180709 14:46:23.058"></status>
+</kw>
+<kw name="${i} = 22" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.081" level="INFO">${company_name} = Phú Thọ</msg>
+<status status="PASS" starttime="20180709 14:46:23.058" endtime="20180709 14:46:23.081"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.094" level="INFO">${company_link} = http://vtown.vn/area/phu-tho.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.082" endtime="20180709 14:46:23.094"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.095" endtime="20180709 14:46:23.095"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.095" endtime="20180709 14:46:23.096"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.058" endtime="20180709 14:46:23.096"></status>
+</kw>
+<kw name="${i} = 23" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.118" level="INFO">${company_name} = Bình Thuận</msg>
+<status status="PASS" starttime="20180709 14:46:23.097" endtime="20180709 14:46:23.118"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.129" level="INFO">${company_link} = http://vtown.vn/area/binh-thuan.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.119" endtime="20180709 14:46:23.129"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.129" endtime="20180709 14:46:23.130"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.130" endtime="20180709 14:46:23.130"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.096" endtime="20180709 14:46:23.131"></status>
+</kw>
+<kw name="${i} = 24" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.146" level="INFO">${company_name} = Tiền Giang</msg>
+<status status="PASS" starttime="20180709 14:46:23.131" endtime="20180709 14:46:23.146"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.156" level="INFO">${company_link} = http://vtown.vn/area/tien-giang.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.146" endtime="20180709 14:46:23.156"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.156" endtime="20180709 14:46:23.157"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.157" endtime="20180709 14:46:23.158"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.131" endtime="20180709 14:46:23.158"></status>
+</kw>
+<kw name="${i} = 25" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.174" level="INFO">${company_name} = Thái Bình</msg>
+<status status="PASS" starttime="20180709 14:46:23.159" endtime="20180709 14:46:23.174"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.185" level="INFO">${company_link} = http://vtown.vn/area/thai-binh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.174" endtime="20180709 14:46:23.185"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.185" endtime="20180709 14:46:23.186"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.186" endtime="20180709 14:46:23.186"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.158" endtime="20180709 14:46:23.186"></status>
+</kw>
+<kw name="${i} = 26" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.203" level="INFO">${company_name} = Quảng Ninh</msg>
+<status status="PASS" starttime="20180709 14:46:23.187" endtime="20180709 14:46:23.203"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.215" level="INFO">${company_link} = http://vtown.vn/area/quang-ninh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.203" endtime="20180709 14:46:23.215"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.215" endtime="20180709 14:46:23.215"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.216" endtime="20180709 14:46:23.216"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.186" endtime="20180709 14:46:23.216"></status>
+</kw>
+<kw name="${i} = 27" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.233" level="INFO">${company_name} = Bắc Giang</msg>
+<status status="PASS" starttime="20180709 14:46:23.217" endtime="20180709 14:46:23.233"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.243" level="INFO">${company_link} = http://vtown.vn/area/bac-giang.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.233" endtime="20180709 14:46:23.243"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.244" endtime="20180709 14:46:23.244"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.244" endtime="20180709 14:46:23.245"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.216" endtime="20180709 14:46:23.245"></status>
+</kw>
+<kw name="${i} = 28" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.265" level="INFO">${company_name} = Tây Ninh</msg>
+<status status="PASS" starttime="20180709 14:46:23.245" endtime="20180709 14:46:23.265"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.283" level="INFO">${company_link} = http://vtown.vn/area/tay-ninh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.266" endtime="20180709 14:46:23.284"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.284" endtime="20180709 14:46:23.285"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.285" endtime="20180709 14:46:23.286"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.245" endtime="20180709 14:46:23.286"></status>
+</kw>
+<kw name="${i} = 29" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.306" level="INFO">${company_name} = Ninh Bình</msg>
+<status status="PASS" starttime="20180709 14:46:23.287" endtime="20180709 14:46:23.307"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.318" level="INFO">${company_link} = http://vtown.vn/area/ninh-binh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.307" endtime="20180709 14:46:23.318"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.318" endtime="20180709 14:46:23.319"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.319" endtime="20180709 14:46:23.319"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.286" endtime="20180709 14:46:23.319"></status>
+</kw>
+<kw name="${i} = 30" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.336" level="INFO">${company_name} = Hà Tĩnh</msg>
+<status status="PASS" starttime="20180709 14:46:23.320" endtime="20180709 14:46:23.336"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.347" level="INFO">${company_link} = http://vtown.vn/area/ha-tinh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.336" endtime="20180709 14:46:23.347"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.347" endtime="20180709 14:46:23.348"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.348" endtime="20180709 14:46:23.349"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.320" endtime="20180709 14:46:23.349"></status>
+</kw>
+<kw name="${i} = 31" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.365" level="INFO">${company_name} = Bình Phước</msg>
+<status status="PASS" starttime="20180709 14:46:23.349" endtime="20180709 14:46:23.365"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.377" level="INFO">${company_link} = http://vtown.vn/area/binh-phuoc.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.365" endtime="20180709 14:46:23.377"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.377" endtime="20180709 14:46:23.378"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.378" endtime="20180709 14:46:23.378"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.349" endtime="20180709 14:46:23.378"></status>
+</kw>
+<kw name="${i} = 32" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.395" level="INFO">${company_name} = Sơn La</msg>
+<status status="PASS" starttime="20180709 14:46:23.379" endtime="20180709 14:46:23.395"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.407" level="INFO">${company_link} = http://vtown.vn/area/son-la.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.396" endtime="20180709 14:46:23.407"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.407" endtime="20180709 14:46:23.408"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.408" endtime="20180709 14:46:23.408"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.379" endtime="20180709 14:46:23.409"></status>
+</kw>
+<kw name="${i} = 33" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.427" level="INFO">${company_name} = Nam Định</msg>
+<status status="PASS" starttime="20180709 14:46:23.409" endtime="20180709 14:46:23.427"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.437" level="INFO">${company_link} = http://vtown.vn/area/nam-dinh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.428" endtime="20180709 14:46:23.437"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.438" endtime="20180709 14:46:23.438"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.439" endtime="20180709 14:46:23.439"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.409" endtime="20180709 14:46:23.439"></status>
+</kw>
+<kw name="${i} = 34" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.455" level="INFO">${company_name} = Hòa Bình</msg>
+<status status="PASS" starttime="20180709 14:46:23.440" endtime="20180709 14:46:23.455"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.466" level="INFO">${company_link} = http://vtown.vn/area/hoa-binh.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.455" endtime="20180709 14:46:23.466"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.468" endtime="20180709 14:46:23.468"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.468" endtime="20180709 14:46:23.469"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.439" endtime="20180709 14:46:23.469"></status>
+</kw>
+<kw name="${i} = 35" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.485" level="INFO">${company_name} = Đắk Lắk</msg>
+<status status="PASS" starttime="20180709 14:46:23.470" endtime="20180709 14:46:23.485"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.496" level="INFO">${company_link} = http://vtown.vn/area/dak-lak.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.485" endtime="20180709 14:46:23.496"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.496" endtime="20180709 14:46:23.496"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.497" endtime="20180709 14:46:23.497"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.469" endtime="20180709 14:46:23.497"></status>
+</kw>
+<kw name="${i} = 36" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.514" level="INFO">${company_name} = Quảng Ngãi</msg>
+<status status="PASS" starttime="20180709 14:46:23.497" endtime="20180709 14:46:23.514"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.524" level="INFO">${company_link} = http://vtown.vn/area/quang-ngai.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.514" endtime="20180709 14:46:23.524"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.525" endtime="20180709 14:46:23.525"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.525" endtime="20180709 14:46:23.526"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.497" endtime="20180709 14:46:23.526"></status>
+</kw>
+<kw name="${i} = 37" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.542" level="INFO">${company_name} = Kiên Giang</msg>
+<status status="PASS" starttime="20180709 14:46:23.527" endtime="20180709 14:46:23.542"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.553" level="INFO">${company_link} = http://vtown.vn/area/kien-giang.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.543" endtime="20180709 14:46:23.553"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.554" endtime="20180709 14:46:23.554"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.554" endtime="20180709 14:46:23.554"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.526" endtime="20180709 14:46:23.555"></status>
+</kw>
+<kw name="${i} = 38" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.573" level="INFO">${company_name} = Đồng Tháp</msg>
+<status status="PASS" starttime="20180709 14:46:23.555" endtime="20180709 14:46:23.573"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.584" level="INFO">${company_link} = http://vtown.vn/area/dong-thap.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.573" endtime="20180709 14:46:23.584"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.584" endtime="20180709 14:46:23.585"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.585" endtime="20180709 14:46:23.586"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.555" endtime="20180709 14:46:23.586"></status>
+</kw>
+<kw name="${i} = 39" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.603" level="INFO">${company_name} = Bạc Liêu</msg>
+<status status="PASS" starttime="20180709 14:46:23.586" endtime="20180709 14:46:23.603"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.616" level="INFO">${company_link} = http://vtown.vn/area/bac-lieu.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.603" endtime="20180709 14:46:23.616"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.616" endtime="20180709 14:46:23.616"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.616" endtime="20180709 14:46:23.617"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.586" endtime="20180709 14:46:23.617"></status>
+</kw>
+<kw name="${i} = 40" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.634" level="INFO">${company_name} = Thái Nguyên</msg>
+<status status="PASS" starttime="20180709 14:46:23.617" endtime="20180709 14:46:23.634"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.646" level="INFO">${company_link} = http://vtown.vn/area/thai-nguyen.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.635" endtime="20180709 14:46:23.646"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.646" endtime="20180709 14:46:23.647"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.647" endtime="20180709 14:46:23.647"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.617" endtime="20180709 14:46:23.647"></status>
+</kw>
+<kw name="${i} = 41" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.662" level="INFO">${company_name} = Hà Tây</msg>
+<status status="PASS" starttime="20180709 14:46:23.648" endtime="20180709 14:46:23.662"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.673" level="INFO">${company_link} = http://vtown.vn/area/ha-tay.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.662" endtime="20180709 14:46:23.673"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.673" endtime="20180709 14:46:23.674"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.674" endtime="20180709 14:46:23.674"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.647" endtime="20180709 14:46:23.674"></status>
+</kw>
+<kw name="${i} = 42" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.688" level="INFO">${company_name} = Đắk Nông</msg>
+<status status="PASS" starttime="20180709 14:46:23.674" endtime="20180709 14:46:23.689"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.700" level="INFO">${company_link} = http://vtown.vn/area/dak-nong.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.689" endtime="20180709 14:46:23.701"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.701" endtime="20180709 14:46:23.702"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.702" endtime="20180709 14:46:23.703"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.674" endtime="20180709 14:46:23.703"></status>
+</kw>
+<kw name="${i} = 43" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.724" level="INFO">${company_name} = Cao Bằng</msg>
+<status status="PASS" starttime="20180709 14:46:23.704" endtime="20180709 14:46:23.724"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.736" level="INFO">${company_link} = http://vtown.vn/area/cao-bang.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.725" endtime="20180709 14:46:23.736"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.736" endtime="20180709 14:46:23.737"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.737" endtime="20180709 14:46:23.737"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.703" endtime="20180709 14:46:23.737"></status>
+</kw>
+<kw name="${i} = 44" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.753" level="INFO">${company_name} = Kon Tum</msg>
+<status status="PASS" starttime="20180709 14:46:23.737" endtime="20180709 14:46:23.753"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.764" level="INFO">${company_link} = http://vtown.vn/area/kon-tum.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.753" endtime="20180709 14:46:23.764"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.764" endtime="20180709 14:46:23.765"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.765" endtime="20180709 14:46:23.765"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.737" endtime="20180709 14:46:23.765"></status>
+</kw>
+<kw name="${i} = 45" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.781" level="INFO">${company_name} = Gia Lai</msg>
+<status status="PASS" starttime="20180709 14:46:23.766" endtime="20180709 14:46:23.781"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.794" level="INFO">${company_link} = http://vtown.vn/area/gia-lai.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.781" endtime="20180709 14:46:23.794"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.794" endtime="20180709 14:46:23.795"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.795" endtime="20180709 14:46:23.795"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.765" endtime="20180709 14:46:23.796"></status>
+</kw>
+<kw name="${i} = 46" type="foritem">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>title</arg>
+</arguments>
+<assign>
+<var>${company_name}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.815" level="INFO">${company_name} = Tuyên Quang</msg>
+<status status="PASS" starttime="20180709 14:46:23.796" endtime="20180709 14:46:23.815"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=(${COMPANY_LABEL})[${i}]</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${company_link}</var>
+</assign>
+<msg timestamp="20180709 14:46:23.829" level="INFO">${company_link} = http://vtown.vn/area/tuyen-quang.html</msg>
+<status status="PASS" starttime="20180709 14:46:23.815" endtime="20180709 14:46:23.829"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+<arg>${company_name}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.829" endtime="20180709 14:46:23.830"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+<arg>${company_link}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.830" endtime="20180709 14:46:23.830"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:23.796" endtime="20180709 14:46:23.831"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:22.317" endtime="20180709 14:46:23.831"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>List Company Name:</arg>
+</arguments>
+<msg timestamp="20180709 14:46:23.831" level="INFO">List Company Name:</msg>
+<status status="PASS" starttime="20180709 14:46:23.831" endtime="20180709 14:46:23.831"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LIST_COMPANY_NAME}</arg>
+</arguments>
+<msg timestamp="20180709 14:46:23.832" level="INFO">['Hồ Chí Minh', 'Hà Nội', 'Bình Dương', 'Đồng Nai', 'Hải Phòng', 'Bắc Ninh', 'Đà Nẵng', 'Hưng Yên', 'Hải Dương', 'Vĩnh Phúc', 'Long An', 'Bà Rịa - Vũng Tàu', 'Thanh Hóa', 'Khánh Hòa', 'Cần Thơ', 'Quảng Nam', 'Lâm Đồng', 'Hà Nam', 'Nghệ An', 'Bình Định', 'Thừa Thiên Huế', 'Phú Thọ', 'Bình Thuận', 'Tiền Giang', 'Thái Bình', 'Quảng Ninh', 'Bắc Giang', 'Tây Ninh', 'Ninh Bình', 'Hà Tĩnh', 'Bình Phước', 'Sơn La', 'Nam Định', 'Hòa Bình', 'Đắk Lắk', 'Quảng Ngãi', 'Kiên Giang', 'Đồng Tháp', 'Bạc Liêu', 'Thái Nguyên', 'Hà Tây', 'Đắk Nông', 'Cao Bằng', 'Kon Tum', 'Gia Lai', 'Tuyên Quang']</msg>
+<status status="PASS" starttime="20180709 14:46:23.832" endtime="20180709 14:46:23.832"></status>
+</kw>
+<kw name="Create And Write File" library="CSV">
+<doc>Create new csv file with first data in A1 cell!</doc>
+<arguments>
+<arg>D:\\Eclipse\\WorkSpace\\ProjectVtown\\Scripts\\Data\\list_company_name.csv</arg>
+<arg>@{LIST_COMPANY_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.832" endtime="20180709 14:46:23.836"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>List Company Link:</arg>
+</arguments>
+<msg timestamp="20180709 14:46:23.836" level="INFO">List Company Link:</msg>
+<status status="PASS" starttime="20180709 14:46:23.836" endtime="20180709 14:46:23.836"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LIST_COMPANY_LINK}</arg>
+</arguments>
+<msg timestamp="20180709 14:46:23.837" level="INFO">['http://vtown.vn/area/hcm.html', 'http://vtown.vn/area/ha-noi.html', 'http://vtown.vn/area/binh-duong.html', 'http://vtown.vn/area/dong-nai.html', 'http://vtown.vn/area/hai-phong.html', 'http://vtown.vn/area/bac-ninh.html', 'http://vtown.vn/area/da-nang.html', 'http://vtown.vn/area/hung-yen.html', 'http://vtown.vn/area/hai-duong.html', 'http://vtown.vn/area/vinh-phuc.html', 'http://vtown.vn/area/long-an.html', 'http://vtown.vn/area/ba-ria--vung-tau.html', 'http://vtown.vn/area/thanh-hoa.html', 'http://vtown.vn/area/khanh-hoa.html', 'http://vtown.vn/area/can-tho.html', 'http://vtown.vn/area/quang-nam.html', 'http://vtown.vn/area/lam-dong.html', 'http://vtown.vn/area/ha-nam.html', 'http://vtown.vn/area/nghe-an.html', 'http://vtown.vn/area/binh-dinh.html', 'http://vtown.vn/area/thua-thien-hue.html', 'http://vtown.vn/area/phu-tho.html', 'http://vtown.vn/area/binh-thuan.html', 'http://vtown.vn/area/tien-giang.html', 'http://vtown.vn/area/thai-binh.html', 'http://vtown.vn/area/quang-ninh.html', 'http://vtown.vn/area/bac-giang.html', 'http://vtown.vn/area/tay-ninh.html', 'http://vtown.vn/area/ninh-binh.html', 'http://vtown.vn/area/ha-tinh.html', 'http://vtown.vn/area/binh-phuoc.html', 'http://vtown.vn/area/son-la.html', 'http://vtown.vn/area/nam-dinh.html', 'http://vtown.vn/area/hoa-binh.html', 'http://vtown.vn/area/dak-lak.html', 'http://vtown.vn/area/quang-ngai.html', 'http://vtown.vn/area/kien-giang.html', 'http://vtown.vn/area/dong-thap.html', 'http://vtown.vn/area/bac-lieu.html', 'http://vtown.vn/area/thai-nguyen.html', 'http://vtown.vn/area/ha-tay.html', 'http://vtown.vn/area/dak-nong.html', 'http://vtown.vn/area/cao-bang.html', 'http://vtown.vn/area/kon-tum.html', 'http://vtown.vn/area/gia-lai.html', 'http://vtown.vn/area/tuyen-quang.html']</msg>
+<status status="PASS" starttime="20180709 14:46:23.837" endtime="20180709 14:46:23.838"></status>
+</kw>
+<kw name="Create And Write File" library="CSV">
+<doc>Create new csv file with first data in A1 cell!</doc>
+<arguments>
+<arg>D:\\Eclipse\\WorkSpace\\ProjectVtown\\Scripts\\Data\\list_company_link.csv</arg>
+<arg>@{LIST_COMPANY_LINK}</arg>
+</arguments>
+<status status="PASS" starttime="20180709 14:46:23.838" endtime="20180709 14:46:23.841"></status>
+</kw>
+<status status="PASS" starttime="20180709 14:46:08.593" endtime="20180709 14:46:23.841" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20180709 14:46:08.437" endtime="20180709 14:46:23.842"></status>
+</suite>
+<status status="PASS" starttime="20180709 14:46:08.432" endtime="20180709 14:46:23.843"></status>
+</suite>
+<status status="PASS" starttime="20180709 14:46:08.410" endtime="20180709 14:46:23.844"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="ProjectVtown">ProjectVtown</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Scripts">ProjectVtown.Scripts</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Get Resoures">ProjectVtown.Scripts.Get Resoures</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180709 14:46:08.406" level="ERROR">Variable file 'tests\local_variables.py' does not exist.</msg>
+</errors>
+</robot>
